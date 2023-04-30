@@ -29,7 +29,7 @@ def resize_image(image):
 
 @sbb_b.ar_cmd(pattern="(ت(ل)?ك(راف)?) ?(m|t|ميديا|نص)(?:\s|$)([\s\S]*)")
 async def _(event):
-    sbb_bevent = await edit_or_reply(event, "**جار انشاء رابط تلكراف**")
+    sbb_bevent = await edit_or_reply(event, "**‹ جار انشاء رابط تلكراف ›**")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -38,7 +38,7 @@ async def _(event):
     optional_title = event.pattern_match.group(5)
     if not event.reply_to_msg_id:
         return await sbb_bevent.edit(
-            "**قم بالرد على هذه الرسالة للحصول على رابط تلكراف فورا**",
+            "**‹ قم بالرد على هذه الرسالة للحصول على رابط تلكراف فورا ›**",
         )
 
     start = datetime.now()
